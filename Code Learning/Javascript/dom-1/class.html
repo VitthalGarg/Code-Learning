@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn" onClick="displayName()">Sanjay Rathva</button>
+    <h1 id="res"></h1>
+    <button id="byebtn" onclick="byefunc()">Bye</button>
+</body>
+</html>
+
+<script>
+    // let studentName = document.getElementById("btn").innerText;
+    
+    function displayName(){
+        let studentName = document.getElementById("btn").innerText;
+        document.getElementById("res").innerText = "welcome" + " " + studentName;
+    }
+
+    function byefunc(){
+        let studentName = document.getElementById("btn").innerText;
+        document.getElementById("res").innerText = "bye" + " " + studentName;
+    }
+</script>

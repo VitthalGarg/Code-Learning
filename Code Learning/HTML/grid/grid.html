@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+    <style>
+
+        #container{
+            display: grid;
+            /* i can specify rows and columns */
+            grid-template-columns: 100px 100px;
+            grid-template-rows: 100px 100px;
+
+            /* rows will specify hieght */
+            /* columns will specify width */
+
+
+            /* repeat type 1 when equal size*/
+            /* repeat(no of times, size) ---->> this will be used only whenver size is equal*/
+            /* exapmle 1: grid-template-columns: repeat(2, 100px); */
+            /* exapmle 2: grid-template-rows: repeat(2, 100px); */
+
+            /* repeat type 2 when different size*/
+            /* grid-template-columns: repeat(2, 100px) 200px;-----... total columns counts 3 */
+            /* grid-template-rows: repeat(2, 100px) 200px;-----... total columns rows 3 */
+
+
+            /* gap property */
+            /* syntex--->> gap: row-gap column gap */
+            /* example--->>> gap: 10px 20px; */
+            /* syntex---->>> gap: 10px; will work for row and column both and will be used for same gap*/
+            
+        }
+
+        #container>div{
+            padding: 0px;
+        }
+        #container>:nth-child(1){
+            background-color: red;
+        }
+        #container>:nth-child(2){
+            background-color: teal;
+        }
+        #container>:nth-child(3){
+            background-color: orange;
+        }
+        #container>:nth-child(4){
+            background-color: purple;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </div>
+</body>
+</html>

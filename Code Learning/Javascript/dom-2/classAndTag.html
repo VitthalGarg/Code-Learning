@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>class</title>
+</head>
+<body>
+    <h1>IPL hungama</h1>
+    <p id="mahi" class="csk">i am dhoni from csk</p>
+    <p id="kohali" >i am kohali from rcb</p>
+    <p class="mi" >i am rohit from mi</p>
+    <p class="mi" id="master-blaster">i am sachin from mi</p>
+    <p>i am abd from rcb</p>
+    <p class="csk">i am raina from csk</p>
+    
+</body>
+</html>
+
+<script>
+    let x= document.getElementById("mahi");
+    console.log(x);
+
+
+    // getElementsByClassName
+    let y= document.getElementsByClassName("csk");
+    console.log(y); // output will be an array and this will effect by default on first element only . effect for all element we have to use loop (like array)
+
+    // y[0].style.backgroundColor="yellow";
+    // y[1].style.backgroundColor="yellow";
+
+    for (let i=0; i<y.length; i++){
+        y[i].style.backgroundColor="yellow";
+    }
+
+    let mumbai=document.getElementsByClassName("mi");
+    for(let i=0; i<mumbai.length; i++){
+        mumbai[i].style.backgroundColor="blue";
+    }
+
+
+    // getElementsByTagName
+    let allps= document.getElementsByTagName("p");
+    console.log(allps); // output will be an array and this will effect by default on first element only . effect for all element we have to use loop (like array)
+
+    for (let i=0; i<allps.length; i++){
+        allps[i].style.fontSize="40px";
+    }
+
+    // id--> getElelementById
+    // tag--> getElelementByTagName
+    // class--> getElelementByClassName
+    
+</script>

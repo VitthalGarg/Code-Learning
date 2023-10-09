@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>align items</title>
+    <style>
+        .box{
+            display: flex;
+            border: 1px solid black;
+            height: 150px;
+            /* justify-content is used for x axis -horizontal: ; */
+            /* align items workd in y axis  vertically*/
+            /* align-items: center; */
+            /* content will moving center in vertically */
+            justify-content: center;
+            align-items: flex-end;
+            /* content will moving center in horizontally */
+            /* align-items: flex-end; */
+            /* align-items: flex-start; */
+            /* align-items: strecth-->> height must be accordingly; */
+            /* align-items: strecth-->> default ; */
+
+        }
+
+        .box>div{
+            
+            width: 100px;
+            border: 1px solid red;
+        }
+
+        .box>div:nth-child(2n){
+            background-color: teal;
+        }
+        .box>div:nth-child(2n+1){
+            background-color: orange;
+        }
+        
+
+       
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div>1</div>
+        <div id="length">2</div>
+        <div>3</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>drive check</title>
+</head>
+<body>
+    <input id="age" type="number" />
+    <button onCLick="checkage()">submit</button>
+    <h1 id="res" ></h1>
+</body>
+</html>
+
+<script>
+
+    let ptag= document.getElementById("res");
+
+    function checkage(){
+        let ageno=document.getElementById("age").value;
+        if(ageno<18){
+            document.getElementById("res").innerText="you can't drive in india";
+        } else if(ageno>18){
+            ptag.innerText="you can drive in india";
+        }else{
+            ptag.innerText="you just old for drive in india";
+
+        }
+    }
+</script>

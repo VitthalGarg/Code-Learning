@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>attribute selectors</title>
+    <style>
+        p:first-child ,
+        body>p:nth-child(2) {
+            background-color: pink;
+        } 
+
+        /* body tag not mandatory */
+        /* only this way can be select multiple rowas with child selectot
+        this will not work--->> body>p:first-child , body>p:last-child() */
+
+
+
+        /* nth-child() can put numerical value, even, odd prime, etc */
+        /* body>p:first-child{
+            background-color: pink;
+        } */
+        /* comma selector */
+
+    
+    </style>
+</head>
+<body>
+    <p>p1</p>
+    <p>p2</p>
+    <p>p3</p>
+    <p>p4</p>
+    <p>p5</p>
+    <p>p6</p>
+    <p>p7</p>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>order</title>
+    <style>
+        .box{
+            display: flex;
+            border: 1px solid black; 
+        }
+
+
+        .box>div{
+            height: 100px;
+            width: 100px;
+            border: 1px solid red;
+        }
+        /* default order value is 0 */
+        /* higher order value will be last */
+
+
+        .box>div:nth-child(2n){
+            background-color: teal;
+        }
+
+
+        .box>div:nth-child(2n+1){
+            background-color: orange;
+        }
+
+        #order-1{
+            order: 2;
+        }
+
+        #order-2{
+            order: 3;
+        }
+
+        /* div 3 order value is 0, so it will be first position */
+        
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div id="order-1">1</div>
+        <div id="order-2">2</div>
+        <div>3</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Query Selector</title>
+</head>
+<body>
+    <h1>IPL hungama</h1>
+    <p id="mahi" class="csk">i am dhoni from csk</p>
+    <p id="kohali" >i am kohali from rcb</p>
+    <p class="mi" >i am rohit from mi</p>
+    <p class="mi" id="master-blaster">i am sachin from mi</p>
+    <p>i am abd from rcb</p>
+    <p class="csk">i am raina from csk</p>
+    
+</body>
+</html>
+
+<script>
+    // document.querySelector("#id .class tagname combinators ")
+
+    document.querySelector("#kohali").style.backgroundColor="red";
+
+    document.querySelector(".mi").style.backgroundColor="blue";
+
+    // queryselector will select one element that it matches
+
+    //---------------------------//
+    // querySelectorAll("#id .class tagname combinators ")
+    //this provide an array // this wont select one element
+    // and we have to give effect like an array 
+    //we can't be use it like queryselector [we have to make an array and further we have to write code]
+
+    let mahi= document.querySelectorAll(".csk");
+    console.log(mahi); // this wont select one element
+    
+
+    for (let i=0; i<mahi.length; i++){
+        mahi[i].style.backgroundColor="yellow"
+        
+    }
+
+    // not working below both code
+    // mahi.style.backgroundColor="yellow";
+    //document.querySelectorAll(".csk").style.backgroundColor="yellow";
+    
+</script>

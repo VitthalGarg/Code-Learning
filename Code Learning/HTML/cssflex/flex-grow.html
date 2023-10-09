@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>flex grow</title>
+    <style>
+
+        .box{
+            display: flex;
+            border: 3px solid black;
+            height: 150px;
+            width: 200px;
+        }
+
+        .box>div{
+            /* flex-grow: 5; */
+            /* justify content distributes margins */
+            /* flex disctributes available spaces/ width  */
+            flex-shrink: 1;
+
+            border: 1px solid red;
+            width: 100px;
+        }
+
+        .box>div:nth-child(2n){
+            background-color: teal;
+        }
+
+        .box>div:nth-child(2n+1){
+            background-color: orange;
+        }
+
+        #length{
+            /* flex-grow: 1; */
+            flex-shrink: 5;
+        }
+
+        /* 5:1:5 */
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div>1</div>
+        <div id="length">2</div>
+        <div>3</div>
+    </div>
+</body>
+</html>

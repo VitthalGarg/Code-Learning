@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>child selector ></title>
+    <style>
+        /* descendant selector - space */
+        /* slector1 selctor2 selector3..... */
+        /* slectors -> tag,id,class,universal */
+        /* only one genration down */
+
+        
+        div>p{
+            /* select all p's which are descendants of div */
+            background-color: red;
+        }
+
+        #div2>p{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>p1 in inside div</p>
+        <p>p2 in inside div</p>
+        <div id="div2">
+            <p>p3</p>
+            <span>
+                <p>p4</p>
+            </span>
+        </div>
+
+        <p>p5</p>
+
+
+    </div>
+
+    <p>p2 not in div</p>
+</body>
+</html>

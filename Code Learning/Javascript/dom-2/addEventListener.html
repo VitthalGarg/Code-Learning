@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <button>Like me</button>
+    
+</body>
+</html>
+
+<script>
+    // inside html--- you should include word onClick
+    //js---- click
+    //onClick="myFunction()"
+    //addEventListener("click",myFunction)
+
+    document.querySelector("button").addEventListener("click",myfunction)
+
+    //whenever you are adding event to some element(button), an event object will be formed, this event object will contain additional properties of that particular     
+    //event object can be accessed in function parameter
+
+    function myfunction(event){
+        console.log(event.target.innerText);
+        console.log("someone liked me");
+    }
+</script>

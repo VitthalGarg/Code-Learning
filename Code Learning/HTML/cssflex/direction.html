@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>direction</title>
+    <style>
+        .box{
+            display: flex;
+            border: 1px solid black;
+            /* flex-direction: row-reverse;             */
+            /* flex-direction: column;             */
+            /* flex-direction: column-reverse;             */
+        }
+
+        .box>div{
+            
+            height: 100px;
+            width: 100px;
+            border: 1px solid red;
+        }
+
+        .box>div:nth-child(2n){
+            background-color: teal;
+        }
+        .box>div:nth-child(2n+1){
+            background-color: orange;
+        }
+        
+
+       
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Check Your BMI</h1>
+    <h2>Enter your weight and height below to check your BMI results</h2>
+
+    <h3>Put your weight in here (KG)</h3>
+    <input id="weight" type="number">
+
+    <h3>Put your height in here (Meter)</h3>
+    <input id="height" type="number">
+
+    <button id="btn">Calculate BMI</button>
+
+    <h3 id="res"></h3>
+
+</body>
+</html>
+
+<script>
+
+    document.querySelector("#btn").addEventListener("click",myfunction)
+
+    function myfunction(event){
+
+        let wt= document.querySelector("#weight").value
+
+        let ht= document.querySelector("#height").value
+
+        let bmi=(wt/(ht*ht)).toFixed(2);
+
+        let display=document.querySelector("#res")
+
+        if(bmi<=18.4){
+            display.innerText="Your BMI is "+bmi+" which means You are UnderWeight";
+        } else if(bmi >= 18.5 && bmi <= 24.9){
+            display.innerText="Your BMI is "+bmi+" which means You are Normal Weight";
+        } else if(bmi >= 25 && bmi <= 29.9){
+            display.innerText="Your BMI is "+bmi+" which means You are OverWeight" ;           
+        } else{
+            display.innerText="Your BMI is "+bmi+" which means You are Obese";
+        }
+
+    }
+
+</script>

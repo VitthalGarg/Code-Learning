@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <h1>laxmi</h1>
+        <p>mazidul</p>
+        <h2>sachin</h2>
+        <h3>martin</h3>
+        <h4>jyothiranjan</h4>
+        <p>chandra</p>
+    </div>
+    
+</body>
+</html>
+<script>
+    // combinators-- querySelector/ querySelectorsAll
+
+    let x=document.querySelector("h2+h3")
+    x.style.background="yellow"
+    // console.log(x);
+
+    let y=document.querySelectorAll("div>p")
+    console.log(y);
+
+    for (let i=0; i<y.length;i++){
+        y[i].style.background="red";
+    }
+
+</script>

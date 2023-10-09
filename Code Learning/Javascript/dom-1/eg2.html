@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <input id="name" type="text" placeholder="Name" value="" />
+    <button onClick="getValues()" >Submit </button>
+    <h1 id="display"></h1>
+
+    <input id="email" type="email" placeholder="email" value="" />
+    <button onClick="getemail()" >Submit</button>
+    <h1 id="displayemail"></h1>
+
+    <select id="role">
+        <option value="fsd">fsd</option>
+        <option value="backend">backend</option>
+        <option value="frontend">frontend</option>
+    </select>
+    <h1 id="role-display"></h1>
+    
+</body>
+</html>
+
+<script>
+
+    function getValues(){
+        let enteredvalue= document.getElementById("name").value;
+        document.getElementById("display").innerText=enteredvalue;
+    }
+
+    function getemail(){
+        let enteredvalue= document.getElementById("email").value;
+        document.getElementById("displayemail").innerText=enteredvalue;
+        
+        let role= document.getElementById("role").value;
+        document.getElementById("role-display").innerText=role;
+    }
+
+</script>

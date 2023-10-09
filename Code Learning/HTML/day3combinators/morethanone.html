@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>more than one</title>
+    <style>
+        /* descendant selector - space */
+        /* slector1 selctor2 selector3..... */
+        /* slectors -> tag,id,class,universal */
+        div > p + p{
+            /* select all p's which are descendants of div */
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>p1 in inside div</p>
+        <p>p2 in inside div</p>
+        <p>p3 in inside div</p>
+        <div id="div2">
+            <p>inside</p>
+            <p>inside</p>
+        </div>
+        <p>p4 in inside div</p>
+        <p>p5 in inside div</p>
+
+
+    </div>
+
+    <p>p6 not in div</p>
+</body>
+</html>

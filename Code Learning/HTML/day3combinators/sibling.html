@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>child selector ></title>
+    <style>
+        /* genaral sibling selector - ~ */
+        /* slector1~selctor2~selector3..... */
+        /* slectors -> tag,id,class,universal */
+        /* both parents same */
+
+
+        /* adjacent sibling selector - + */
+        /* slector1+selctor2+selector3..... */
+        /* slectors -> tag,id,class,universal */
+        /* both parents same */
+        /* only work for next sibling elment not immediate */
+
+        #first ~p{
+            background-color: blue;
+        }
+
+        #pp1 + p{
+            background-color: brown;
+        }
+
+
+
+        
+    </style>
+</head>
+<body>
+    <div>
+        <p id="first">p1 in inside div</p>
+        <p>p2 in inside div</p>
+        <div id="div2">
+            <p>p3</p>
+            <span>
+                <p>p4</p>
+            </span>
+        </div>
+
+        <p id="pp1">para 2</p>
+        <p id="pp2">p5</p>
+
+
+    </div>
+
+    <p>p2 not in div</p>
+</body>
+</html>

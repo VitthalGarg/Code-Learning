@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CSS Flex pre</title>
+    <style>
+        .box{
+            background-color: pink;
+            padding: 20px;
+            display: flex;
+            /* flex-direction== row/row-reverse/column/column-reverse */
+
+            /* justify-content: space-around/space-evenly/space-between/flex-start/flex-end/center; */
+
+            /* align-items: center/flex-start/flex-end/flex stretch; */
+
+            /* flex-wrap: wrap; */
+            /* align-content: space-evenly/space-between/space-around/center; */
+                       
+
+        }
+
+        .box>div{
+            padding: 30px;
+        }
+
+        .box>div:nth-child(1){
+            background-color: teal;
+            /* flex-grow: 1; */
+            /* flex-basis: 80px; */
+        }
+
+        .box>div:nth-child(2){
+            background-color: rgb(212, 187, 24);
+            /* order: 1; */
+            /* max value of order will show in the last */
+        }
+        
+        .box>div:nth-child(3){
+            background-color: rgb(164, 42, 58);
+            /* flex-grow: 2; */
+            /* order: 3; */
+        }
+
+        .box>div:nth-child(4){
+            background-color: teal;
+            /* flex-basis: 400px; */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </div>
+</body>
+</html>

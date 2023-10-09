@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Form</title>
+</head>
+<body>
+    <form action="">
+
+        <input type="text" placeholder="Enter name" id="name"/>
+        <input type="number" placeholder="Enter Mobile" id="mobile"/>
+        <input type="submit" value="login">
+        
+    </form>
+</body>
+</html>
+
+<script>
+
+
+    document.querySelector("form").addEventListener("submit",myfunction)
+
+    function myfunction(){
+        event.preventDefault() // without it we can see the output for milisecond because form behaviour is page refresh so we can't see results more time.
+
+        var username=document.querySelector("#name").value;
+        var mobile=document.querySelector("#mobile").value;
+
+        console.log(username, mobile);
+    }
+
+    // 5 steps to convert into a form from input and button
+    //1--- wrap inputs in a form
+    //2--- remove button and add an input (submit) in wrap area
+    //3--- replace querysector (submit) with form
+    //4--- replace addEventListener (click) with submit
+    //5--- add event.preventDefault() for showing better result
+</script>

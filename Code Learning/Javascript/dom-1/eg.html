@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="res"></h1>
+    <button id="login" onClick="login()">Login</button>
+    <button id="logout" onclick="logout()">Log out</button>
+</body>
+</html>
+
+<script>
+    function login(){
+        document.getElementById("res").innerText = "Logged In";
+    }
+
+    function logout(){
+        document.getElementById("res").innerText = "Logged out";
+    }
+</script>

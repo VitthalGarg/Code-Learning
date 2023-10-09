@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Drinving Check</title>
+</head>
+<body>
+    <input id="age" type="number"/> 
+    <button onClick="agecheck()">Check Age</button>
+    <h1 id="res"></h1> 
+     
+</body>
+</html>
+
+<script>
+    
+    function agecheck(){
+        let age=document.getElementById("age").value;
+        console.log(age)
+
+        if(age<18){
+            document.getElementById("res").innerText="not";
+        } else if(age>18){
+            document.getElementById("res").innerText="yes";
+        } else{
+            document.getElementById("res").innerText="just old enough";
+        }
+
+    }
+
+</script>
