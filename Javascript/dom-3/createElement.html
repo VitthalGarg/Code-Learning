@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    // Create Element (use -- for write many times element 100times by loop) [we can't use for loop in body tag cz html cant't support loop]
+
+    let colors= ["red", "green", "yellow", "blue", "pink", "orange", "pink", "pink", "pink", "pink"];
+
+    for(var i=0; i<10; i++){
+        //1. creating element
+    let head=document.createElement("h1") //<h1></h1>
+
+    //2. filling innerText
+    head.innerText=colors[i] //<h1/>Masai School</h1>
+
+    head.style.backgroundColor=colors[i]
+
+    //3.adding/append it to body
+    document.querySelector("body").append(head)
+
+    }
+    
+
+</script>

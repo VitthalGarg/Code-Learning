@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    // Create Element (use -- for write many times element 100times by loop) [we can't use for loop in body tag cz html cant't support loop]
+
+    let objData= [
+        {color:"red", name:"Umesh"},
+        {color:"yellow", name:"priyanka"},
+        {color:"green", name:"rohit"},
+    ];
+
+    for(var i=0; i<objData.length; i++){
+    let head=document.createElement("h1") //<h1></h1>
+    head.innerText=objData[i].name
+    head.style.backgroundColor=objData[i].color
+    document.querySelector("body").append(head)
+
+    }
+    
+
+</script>
