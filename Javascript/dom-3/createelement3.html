@@ -33,18 +33,31 @@
 
     let box=document.createElement("div");
 
-    for(var i=0; i<10; i++){
+    // for(var i=0; i<10; i++){
 
-    let head=document.createElement("button")
+    // let head=document.createElement("button")
 
-    head.innerText=colors[i].name
-    head.style.backgroundColor=colors[i].bcolor
-    head.style.color=colors[i].Tcolor
+    // head.innerText=colors[i].name
+    // head.style.backgroundColor=colors[i].bcolor
+    // head.style.color=colors[i].Tcolor
 
-    document.querySelector("body").append(box)
+    // document.querySelector("body").append(box)
 
-    // document.querySelector("div").append(head)
-    box.append(head);
+    // //1-- document.querySelector("div").append(head)
+    // //2-- box.append(head);
 
-    }
+    // }
+
+    //by higher order function
+
+    colors.forEach(function(elem){ //here we use "map" also
+
+        let head=document.createElement("button");
+        head.innerText=elem.name;
+        head.style.backgroundColor=elem.bcolor;
+        head.style.color=elem.Tcolor;
+        box.append(head);
+        document.querySelector("body").append(box);
+
+    });
 </script>
