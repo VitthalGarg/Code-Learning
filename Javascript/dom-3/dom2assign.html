@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<style>
+    button{
+        margin: 5px;
+        padding: 5px;
+    }    
+</style>
+<body>
+    
+</body>
+</html>
+
+<script>
+
+
+
+    let colors= [
+        {name:"Primary", Tcolor:"white", bcolor:"blue"},
+        {name:"Secondary", Tcolor:"white", bcolor:"grey"},
+        {name:"Danger", Tcolor:"white", bcolor:"red"},
+        {name:"Warning", Tcolor:"black", bcolor:"yellow"},
+        {name:"info", Tcolor:"white", bcolor:"aqua"},
+        {name:"Light", Tcolor:"black", bcolor:"white"},
+        {name:"Seccess", Tcolor:"white", bcolor:"green"},
+        {name:"Dark", Tcolor:"white", bcolor:"black"},
+        {name:"Link", Tcolor:"blue", bcolor:"white"},
+        {name:"Dark Pink", Tcolor:"blue", bcolor:"pink"},
+    ];
+
+    for(var i=0; i<10; i++){
+
+    let head=document.createElement("button")
+    head.innerText=colors[i].name
+    head.style.backgroundColor=colors[i].bcolor
+    head.style.color=colors[i].Tcolor
+    document.querySelector("body").append(head)
+
+    }
+    
+
+</script>
