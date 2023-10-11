@@ -16,6 +16,8 @@
 
 <script>
 
+    // if we want button in div of bodytag
+
     let colors= [
         {name:"Primary", Tcolor:"white", bcolor:"blue"},
         {name:"Secondary", Tcolor:"white", bcolor:"grey"},
@@ -29,15 +31,20 @@
         {name:"Dark Pink", Tcolor:"blue", bcolor:"pink"},
     ];
 
+    let box=document.createElement("div");
+
     for(var i=0; i<10; i++){
 
     let head=document.createElement("button")
+
     head.innerText=colors[i].name
     head.style.backgroundColor=colors[i].bcolor
     head.style.color=colors[i].Tcolor
-    document.querySelector("body").append(head)
+
+    document.querySelector("body").append(box)
+
+    // document.querySelector("div").append(head)
+    box.append(head);
 
     }
-    
-
 </script>
