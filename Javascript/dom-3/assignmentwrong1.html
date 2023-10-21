@@ -4,7 +4,7 @@
     <title>Document</title>
     <style>
         #container{
-            display: grid;
+            display: flex;
             grid-template-columns: repeat(4, 1fr);
             gap: 20px;
             
@@ -13,16 +13,9 @@
         #container>div{ 
             text-align: center;           
         }
-
-        img{
-            max-width: 100%;
-        }
     </style>
 </head>
 <body>
-    <div id="container">
-
-    </div>
     
 </body>
 </html>
@@ -185,7 +178,9 @@ let investors = [
   },
 ];
 
-investors.map(function(elm){
+investors.forEach(function(elm){
+    let cont=document.createElement("div");
+    cont.setAttribute("id", "container");
 
     let div=document.createElement("div");
 
@@ -202,11 +197,9 @@ investors.map(function(elm){
     logo.setAttribute("src",elm.companyLogo);
 
     div.append(img, name, role, logo);
-    document.querySelector("#container").append(div)
+    cont.append(div)
+    document.querySelector("body").append(cont)
 
 })
 
-// console.log(x);
-
 </script>
-
