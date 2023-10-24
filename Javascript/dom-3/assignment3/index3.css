@@ -1,1 +1,21 @@
-/* Fill CSS here */
+h1{
+    text-align: center;
+    color: steelblue;
+    text-decoration: underline;
+}
+
+body>div{
+    display: flex;
+    justify-content: space-around;    
+}
+
+th{
+    background-color: steelblue;
+    padding: 7px;
+}
+
+table{
+    text-align: center;
+    font-size: 10px;
+    color: white;
+}
