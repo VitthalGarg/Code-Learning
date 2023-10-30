@@ -28,6 +28,10 @@ function Area(redious){
     return 3.14*redious**2;
 }
 
+function peri(redious){
+    return 2*3.14*redious;
+}
+
 function calculate(array,Callback){
     let newarr=[];
     for(let i=0;i<array.length;i++){
@@ -37,3 +41,4 @@ function calculate(array,Callback){
 }
 
 console.log(calculate(red,Area));
+console.log(calculate(red,peri));
