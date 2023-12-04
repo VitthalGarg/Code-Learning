@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>localStorage</title>
+</head>
+<body>    
+</body>
+</html>
+
+<script>
+    //setItem("","")
+    localStorage.setItem("movie","Thor")
+
+    localStorage.setItem("movie","Avengers")
+    // this update the key value
+
+    localStorage.setItem("hero","hemsworth")
+
+    //numbers
+
+    localStorage.setItem("rating",9)
+    localStorage.setItem("rating",8)
+    localStorage.setItem("rating",7)
+
+    //getItem
+    let movieName=localStorage.getItem("movie")
+    console.log(movieName);
+
+    let heroName=localStorage.getItem("hero")
+    console.log(heroName);
+
+    //removeItem
+
+    localStorage.removeItem("movie");
+
+    //clear
+
+    localStorage.clear()
+
+</script>
