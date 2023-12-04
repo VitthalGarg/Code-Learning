@@ -12,9 +12,44 @@
 
 <script>
     let nums=[1,2,3,4]
+    //array to string
     nums=JSON.stringify(nums);
 
+    //stringify()
+
     localStorage.setItem("storing_nums",nums)
+
+    let obj={
+        name:"ajay",
+        age:"32"
+    }
+
+    localStorage.setItem("storing_obj",JSON.stringify(obj))
+
+    let getting_array=localStorage.getItem("storing_nums");
+    
+
+    // string to array >>>> JSON.parse()
+
+    getting_array=JSON.parse(getting_array);
+
+    console.log(getting_array)
+
+    let getting_obj=localStorage.getItem("storing_obj");
+    getting_obj=JSON.parse(getting_obj);
+
+    console.log(getting_obj);
+
+    let arr_of_obj=[
+        {name:"ajay",age:32},
+        {name:"vijay",age:34},
+    ]
+
+    localStorage.setItem("storing_arrobj",JSON.stringify(arr_of_obj))
+
+    console.log(JSON.parse(localStorage.getItem("storing_arrobj")))
+
+
 
     //LocalStorage will accept only string not array
 
