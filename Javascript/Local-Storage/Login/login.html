@@ -6,6 +6,27 @@
     <title>Login Page</title>
 </head>
 <body>
-    
+    <h1>Login Page</h1>
+    <input placeholder="Enter Name" type="text">
+    <a href="lectures.html"><button>Sign Up</button></a>
 </body>
 </html>
+
+<script>
+    localStorage.setItem("email","abc@gmail.com")
+
+    document.querySelector("button").addEventListener("click",signupfunc);
+
+    function signupfunc(){
+        let name=document.querySelector("input").value;
+        if(name=="masai"){
+            window.location.href="lectures.html";
+        }else{
+            alert("Please enter correct details")
+        }
+    }
+
+    let email=localStorage.getItem("email")
+    console.log(email)
+
+</script>
