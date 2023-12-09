@@ -30,12 +30,11 @@
     </div>
     
 </body>
-
+</html>
 
 <script>
-    // let appliedjobs=JSON.parse(localStorage.getItem("joblist"))||[]
     let bookmarked=JSON.parse(localStorage.getItem("bookmarks"))||[]
-    // // console.log(appliedjobs)
+    
 
     bookmarked.map(function(elem,index){
         let tr=document.createElement("tr")
@@ -51,6 +50,9 @@
         let td5=document.createElement("td")
         td5.innerText="Delete";
         td5.style.color="red";
+        td5.addEventListener("click",function(event){
+                event.target.parentNode.remove();
+            })
         td5.addEventListener("click",function(){
             deletebookmark(index)
         })
@@ -61,23 +63,8 @@
     });
 
     function deletebookmark(index){
-        // console.log(index)
         bookmarked.splice(index,1)
-        // console.log(bookmarked);
         localStorage.setItem("bookmarks",JSON.stringify(bookmarked))
     }
 
-    // function bookmarkfunc(elem,index){
-        
-    //     bookmarked.push(elem)
-    //     // console.log(bookmarked);
-    //     localStorage.setItem("bookmarks",JSON.stringify(bookmarked))
-    // }
-
-
-
-
-
 </script>
-
-</html>
