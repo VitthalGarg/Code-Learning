@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment WE 1</title>
+    <style>
+        img{
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <img src="https://cdn.pixabay.com/photo/2016/12/13/05/15/puppy-1903313_1280.jpg" alt="">
+    <p>Like: <span id="likecount"></span> </p>
+    <p>Dislike: <span id="dislikecount"></span> </p>
+    <div>
+        <button id="like">Like</button>
+    </div>
+    <div>
+        <button id="dislike">Dislike</button>
+    </div>
+</body>
+</html>
+
+<script>
+    let likes=localStorage.getItem("likecount")||0
+    let dislikes=localStorage.getItem("dislikecount")||0
+
+    document.querySelector("#likecount").innerText=localStorage.getItem("likecount")||0;
+    
+    document.querySelector("#dislikecount").innerText=localStorage.getItem("dislikecount")||0;
+
+    document.querySelector("#like").addEventListener("click",function(){
+        likes++
+        document.querySelector("#likecount").innerText=likes;
+        localStorage.setItem("likecount",likes)
+    })
+
+    document.querySelector("#dislike").addEventListener("click",function(){
+        dislikes++
+        document.querySelector("#dislikecount").innerText=dislikes;
+        localStorage.setItem("dislikecount",dislikes)
+
+    })
+
+</script>
