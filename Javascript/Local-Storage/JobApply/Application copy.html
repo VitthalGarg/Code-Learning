@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -13,7 +13,7 @@
 
     <div>
         <table>
-            <!-- Dont change order of columns -->
+            Dont change order of columns
             <thead>
               <tr>
                 <th>Name</th>
@@ -24,20 +24,20 @@
               </tr>
             </thead>
             <tbody>
-            <!-- Append your output to tbody -->
-            </tbody>
+            Append your output to tbody
+            <!-- </tbody>
           </table>
     </div>
     
 </body>
+</html> -->
 
-
-<script>
+<!-- <script>
     let appliedjobs=JSON.parse(localStorage.getItem("joblist"))||[]
-    let bookmarked=JSON.parse(localStorage.getItem("bookmarks"))||[]
-    // console.log(appliedjobs)
+    let bookmarked=[]
+    console.log(appliedjobs)
 
-    appliedjobs.map(function(elem,index){
+    appliedjobs.map(function(elem){
         let tr=document.createElement("tr")
         let td1=document.createElement("td")
         td1.innerText=elem.name
@@ -51,26 +51,22 @@
         let td5=document.createElement("td")
         td5.innerText="Bookmark"
         td5.style.backgroundColor="pink";
-        td5.addEventListener("click",function(){
-            bookmarkfunc(elem,index)
-        })
+        td5.addEventListener("click",bookmarkfunc(elem))
 
         tr.append(td1,td2,td3,td4,td5)
         document.querySelector("tbody").append(tr)
 
-    });
+    })
 
-    function bookmarkfunc(elem,index){
+    function bookmarkfunc(elem){
         
         bookmarked.push(elem)
-        // console.log(bookmarked);
+        console.log(bookmarked);
         localStorage.setItem("bookmarks",JSON.stringify(bookmarked))
-    }
+    } -->
 
 
 
 
 
-</script>
-
-</html>
+<!-- </script> --> -->

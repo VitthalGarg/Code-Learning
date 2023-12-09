@@ -3,12 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bookmark</title>
+    <title>Application</title>
+    <link rel="stylesheet" href="application.css">
 </head>
 <body>
     <a href="Apply.html"><button>Apply</button></a>    
     <a href="Application.html"><button>Applications</button></a>    
     <a href="bookmark.html"><button>Bookmark</button></a>
+
+    <div>
+        <table>
+            <!-- Dont change order of columns -->
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Expected Package</th>
+                <th>Remove Person</th>
+              </tr>
+            </thead>
+            <tbody>
+            <!-- Append your output to tbody -->
+            </tbody>
+          </table>
+    </div>
     
 </body>
+
+
+<script>
+    // let appliedjobs=JSON.parse(localStorage.getItem("joblist"))||[]
+    let bookmarked=JSON.parse(localStorage.getItem("bookmarks"))||[]
+    // // console.log(appliedjobs)
+
+    bookmarked.map(function(elem,index){
+        let tr=document.createElement("tr")
+        let td1=document.createElement("td")
+        td1.innerText=elem.name
+        
+        let td2=document.createElement("td")
+        td2.innerText=elem.email
+        let td3=document.createElement("td")
+        td3.innerText=elem.role
+        let td4=document.createElement("td")
+        td4.innerText=elem.package
+        let td5=document.createElement("td")
+        td5.innerText="Delete";
+        td5.style.color="red";
+        td5.addEventListener("click",function(){
+            deletebookmark(index)
+        })
+
+        tr.append(td1,td2,td3,td4,td5)
+        document.querySelector("tbody").append(tr)
+
+    });
+
+    function deletebookmark(index){
+        // console.log(index)
+        bookmarked.splice(index,1)
+        // console.log(bookmarked);
+        localStorage.setItem("bookmarks",JSON.stringify(bookmarked))
+    }
+
+    // function bookmarkfunc(elem,index){
+        
+    //     bookmarked.push(elem)
+    //     // console.log(bookmarked);
+    //     localStorage.setItem("bookmarks",JSON.stringify(bookmarked))
+    // }
+
+
+
+
+
+</script>
+
 </html>
