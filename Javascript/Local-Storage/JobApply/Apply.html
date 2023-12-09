@@ -6,16 +6,46 @@
     <title>Job Apply</title>
 </head>
 <body>
-    <a href="Apply.html"><button>Apply</button></a>    
-    <a href="Application.html"><button>Applications</button></a>    
-    <a href="bookmark.html"><button>Bookmark</button></a>  
+    <form action="">
+        <a href="Apply.html"><button>Apply</button></a>    
+        <a href="Application.html"><button>Applications</button></a>    
+        <a href="bookmark.html"><button>Bookmark</button></a>  
     
-    <h1>Enter Your Application Details</h1>
+        <h1>Enter Your Application Details</h1>
 
-    <input placeholder="Enter Name" type="text">
-    <input placeholder="Enter Email" type="email">
-    <input placeholder="Enter role" type="text">
-    <input placeholder="Enter your package " type="number">
-    <a href=""><button>Submit</button></a>
+        <input placeholder="Enter Name" id="name" type="text">
+        <input placeholder="Enter Email" id="email" type="email">
+        <input placeholder="Enter role" id="role" type="text">
+        <input placeholder="Enter your package" id="package" type="number">
+        <a href=""><button>Submit</button></a>
+
+    </form>
 </body>
 </html>
+
+<script>
+    document.querySelector("form").addEventListener("submit",jobapply)
+
+    let Arrobj=JSON.parse(localStorage.getItem("joblist"))||[]
+    // if(localStorage.getItem("joblist")==null){
+    //     Arrobj=[]
+    // }else{
+    //     Arrobj=JSON.parse(localStorage.getItem("joblist"))
+    // }
+    console.log(Arrobj)
+
+    function jobapply(){
+        event.preventDefault()
+        let jobarr={
+            name:document.querySelector("#name").value,
+            email:document.querySelector("#email").value,
+            role:document.querySelector("#role").value,
+            package:document.querySelector("#package").value,
+        }
+        // console.log(jobarr);
+        Arrobj.push(jobarr);
+        // console.log(Arrobj);
+        localStorage.setItem("joblist",JSON.stringify(Arrobj))
+    }
+
+</script>
