@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign up page</title>
+</head>
+<body>
+    <h1>Sign up page</h1>
+    <a href="./login.html">Login Here</a>
+
+    <h2>You can signup here</h2>
+
+    <form action="">
+        <input placeholder="Enter your name here" type="text">
+        <input placeholder="Enter your mail" id="smail" type="mail">
+        <input placeholder="Password" id="spassword" type="password">
+        <button>Submit</button>
+    </form>
+    
+</body>
+</html>
+
+<script>
+    document.querySelector("form").addEventListener("submit",signup)
+
+    let signarr=JSON.parse(localStorage.getItem("signingdetails"))||[]
+
+    function signup(event){
+        event.preventDefault()
+        let mail= document.querySelector("#smail").value
+        let password= document.querySelector("#spassword").value
+
+        localStorage.setItem("loginmail",mail)
+        localStorage.setItem("loginpassword",password)
+
+        let signdet={
+            email:mail,
+            pass:password
+        }
+        
+        signarr.push(signdet)
+        // console.log(signarr)
+        localStorage.setItem("signingdetails",JSON.stringify(signarr))
+    }
+</script>

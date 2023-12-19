@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+</head>
+<body>
+
+    <h1>Login Page</h1>
+    <a href="./signup.html">Sign up here</a>
+
+    <h2>Enter your login details here</h2>
+
+    <form action="">
+        <input placeholder="Enter your mail" id="lmail" type="mail">
+        <input placeholder="Enter your Password" id="lpassword" type="password">
+        <button>Submit</button>
+    </form>
+
+    
+</body>
+</html>
+
+<script>
+    document.querySelector("form").addEventListener("submit",login)
+
+    // let signarr=JSON.parse(localStorage.getItem("signingdetails"))||[]
+
+    function login(event){
+        event.preventDefault()
+        let logmail= document.querySelector("#lmail").value
+        let logpassword= document.querySelector("#lpassword").value
+
+        if(logmail==localStorage.getItem("loginmail") && logpassword==localStorage.getItem("loginpassword")){
+            alert("you are logged in")
+        } else{
+            alert("your creds maybe be wrong")
+        }
+
+        // localStorage.setItem("loginmail",mail)
+        // localStorage.setItem("loginpassword",password)
+
+        // let signdet={
+        //     email:mail,
+        //     pass:password
+        // }
+        
+        // signarr.push(signdet)
+        // // console.log(signarr)
+        // localStorage.setItem("signingdetails",JSON.stringify(signarr))
+    }
+</script>
