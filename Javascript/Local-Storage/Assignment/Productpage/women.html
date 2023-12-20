@@ -3,10 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Women Product</title>
+    <style>
+        #container{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            /* height: 200px; */
+        }
+
+        img{
+            /* width: auto; */
+            height: 150px;
+        }
+        h3{
+            font-size: 15px;
+        }
+    </style>
 </head>
 <body>
-    
+    <h1>Product page</h1>
+
+    <div id="container">
+    </div>
+
 </body>
 </html>
 
@@ -15,146 +35,170 @@
     var mensData = [
     {
       image_url:
-        "https://m.media-amazon.com/images/I/51NKPZx0a6L._AC._SR360,460.jpg",
+        "https://m.media-amazon.com/images/I/71Ka-Y0e9-L._AC_UL480_FMwebp_QL65_.jpg",
       name: " MEN'S REEBOK RUNNING AUSTIN SHOES",
       price: 945,
       strikedoffprice: 2010,
     },
     {
       image_url:
-        "https://m.media-amazon.com/images/I/51NKPZx0a6L._AC._SR360,460.jpg",
+        "https://m.media-amazon.com/images/I/81VkRfni1ML._AC_UL480_FMwebp_QL65_.jpg",
       name: " MEN'S REEBOK RUNNING AUSTIN SHOES",
       price: 1000,
       strikedoffprice: 2099,
     },
     {
       image_url:
-        "https://m.media-amazon.com/images/I/61Sq08Qex-L._AC._SR360,460.jpg",
+        "https://m.media-amazon.com/images/I/612+NLXp9rL._AC_UL480_FMwebp_QL65_.jpg",
       name: " MEN'S REEBOK RUNNING AUSTIN SHOES",
       price: 2005,
       strikedoffprice: 2099,
     },
     {
       image_url:
-        "https://m.media-amazon.com/images/I/61GE+a6cA4L._AC._SR360,460.jpg",
+        "https://m.media-amazon.com/images/I/81p0sEs-z5L._AC_UL480_FMwebp_QL65_.jpg",
       name: " MEN'S REEBOK RUNNING AUSTIN SHOES",
       price: 900,
       strikedoffprice: 2099,
     },
     {
       image_url:
-        "https://m.media-amazon.com/images/I/51NKPZx0a6L._AC._SR360,460.jpg",
+        "https://m.media-amazon.com/images/I/710R4Fl8Z+L._AC_UL480_FMwebp_QL65_.jpg",
       name: " MEN'S REEBOK RUNNING AUSTIN SHOES",
       price: 945,
       strikedoffprice: 2010,
     },
     {
       image_url:
-        "https://m.media-amazon.com/images/I/51NKPZx0a6L._AC._SR360,460.jpg",
+        "https://m.media-amazon.com/images/I/91nMuIyt4SL._AC_UL480_FMwebp_QL65_.jpg",
       name: " MEN'S REEBOK RUNNING AUSTIN SHOES",
       price: 1000,
       strikedoffprice: 2099,
     },
     {
       image_url:
-        "https://m.media-amazon.com/images/I/61Sq08Qex-L._AC._SR360,460.jpg",
+        "https://m.media-amazon.com/images/I/81p0sEs-z5L._AC_UL480_FMwebp_QL65_.jpg",
       name: " MEN'S REEBOK RUNNING AUSTIN SHOES",
       price: 2005,
       strikedoffprice: 2099,
     },
     {
       image_url:
-        "https://m.media-amazon.com/images/I/61GE+a6cA4L._AC._SR360,460.jpg",
-      name: " MEN'S REEBOK RUNNING AUSTIN SHOES",
-      price: 900,
-      strikedoffprice: 2099,
-    },
-    {
-      image_url:
-        "https://m.media-amazon.com/images/I/51NKPZx0a6L._AC._SR360,460.jpg",
+        "https://m.media-amazon.com/images/I/71Ka-Y0e9-L._AC_UL480_FMwebp_QL65_.jpg",
       name: " MEN'S REEBOK RUNNING AUSTIN SHOES",
       price: 945,
       strikedoffprice: 2010,
     },
     {
       image_url:
-        "https://m.media-amazon.com/images/I/51NKPZx0a6L._AC._SR360,460.jpg",
+        "https://m.media-amazon.com/images/I/81VkRfni1ML._AC_UL480_FMwebp_QL65_.jpg",
       name: " MEN'S REEBOK RUNNING AUSTIN SHOES",
       price: 1000,
       strikedoffprice: 2099,
     },
     {
       image_url:
-        "https://m.media-amazon.com/images/I/61Sq08Qex-L._AC._SR360,460.jpg",
+        "https://m.media-amazon.com/images/I/612+NLXp9rL._AC_UL480_FMwebp_QL65_.jpg",
       name: " MEN'S REEBOK RUNNING AUSTIN SHOES",
       price: 2005,
       strikedoffprice: 2099,
     },
     {
       image_url:
-        "https://m.media-amazon.com/images/I/61GE+a6cA4L._AC._SR360,460.jpg",
+        "https://m.media-amazon.com/images/I/81p0sEs-z5L._AC_UL480_FMwebp_QL65_.jpg",
       name: " MEN'S REEBOK RUNNING AUSTIN SHOES",
       price: 900,
       strikedoffprice: 2099,
     },
     {
       image_url:
-        "https://m.media-amazon.com/images/I/51NKPZx0a6L._AC._SR360,460.jpg",
+        "https://m.media-amazon.com/images/I/710R4Fl8Z+L._AC_UL480_FMwebp_QL65_.jpg",
       name: " MEN'S REEBOK RUNNING AUSTIN SHOES",
       price: 945,
       strikedoffprice: 2010,
     },
     {
       image_url:
-        "https://m.media-amazon.com/images/I/51NKPZx0a6L._AC._SR360,460.jpg",
+        "https://m.media-amazon.com/images/I/91nMuIyt4SL._AC_UL480_FMwebp_QL65_.jpg",
       name: " MEN'S REEBOK RUNNING AUSTIN SHOES",
       price: 1000,
       strikedoffprice: 2099,
     },
     {
       image_url:
-        "https://m.media-amazon.com/images/I/61Sq08Qex-L._AC._SR360,460.jpg",
+        "https://m.media-amazon.com/images/I/81p0sEs-z5L._AC_UL480_FMwebp_QL65_.jpg",
       name: " MEN'S REEBOK RUNNING AUSTIN SHOES",
       price: 2005,
       strikedoffprice: 2099,
     },
     {
       image_url:
-        "https://m.media-amazon.com/images/I/61GE+a6cA4L._AC._SR360,460.jpg",
-      name: " MEN'S REEBOK RUNNING AUSTIN SHOES",
-      price: 900,
-      strikedoffprice: 2099,
-    },
-    {
-      image_url:
-        "https://m.media-amazon.com/images/I/51NKPZx0a6L._AC._SR360,460.jpg",
+        "https://m.media-amazon.com/images/I/71Ka-Y0e9-L._AC_UL480_FMwebp_QL65_.jpg",
       name: " MEN'S REEBOK RUNNING AUSTIN SHOES",
       price: 945,
       strikedoffprice: 2010,
     },
     {
       image_url:
-        "https://m.media-amazon.com/images/I/51NKPZx0a6L._AC._SR360,460.jpg",
+        "https://m.media-amazon.com/images/I/81VkRfni1ML._AC_UL480_FMwebp_QL65_.jpg",
       name: " MEN'S REEBOK RUNNING AUSTIN SHOES",
       price: 1000,
       strikedoffprice: 2099,
     },
     {
       image_url:
-        "https://m.media-amazon.com/images/I/61Sq08Qex-L._AC._SR360,460.jpg",
+        "https://m.media-amazon.com/images/I/612+NLXp9rL._AC_UL480_FMwebp_QL65_.jpg",
       name: " MEN'S REEBOK RUNNING AUSTIN SHOES",
       price: 2005,
       strikedoffprice: 2099,
     },
     {
       image_url:
-        "https://m.media-amazon.com/images/I/61GE+a6cA4L._AC._SR360,460.jpg",
+        "https://m.media-amazon.com/images/I/81p0sEs-z5L._AC_UL480_FMwebp_QL65_.jpg",
       name: " MEN'S REEBOK RUNNING AUSTIN SHOES",
       price: 900,
+      strikedoffprice: 2099,
+    },
+    {
+      image_url:
+        "https://m.media-amazon.com/images/I/710R4Fl8Z+L._AC_UL480_FMwebp_QL65_.jpg",
+      name: " MEN'S REEBOK RUNNING AUSTIN SHOES",
+      price: 945,
+      strikedoffprice: 2010,
+    },
+    {
+      image_url:
+        "https://m.media-amazon.com/images/I/91nMuIyt4SL._AC_UL480_FMwebp_QL65_.jpg",
+      name: " MEN'S REEBOK RUNNING AUSTIN SHOES",
+      price: 1000,
+      strikedoffprice: 2099,
+    },
+    {
+      image_url:
+        "https://m.media-amazon.com/images/I/81p0sEs-z5L._AC_UL480_FMwebp_QL65_.jpg",
+      name: " MEN'S REEBOK RUNNING AUSTIN SHOES",
+      price: 2005,
       strikedoffprice: 2099,
     },
   ];
 
-  
+  mensData.forEach(function(elm){
+    let div=document.createElement("div")
+
+    let img=document.createElement("img")
+    img.src=elm.image_url;
+
+    let h3=document.createElement("h3")
+    h3.innerText=elm.name;
+
+    let p=document.createElement("p")
+    p.innerText=elm.price;
+
+    let btn=document.createElement("button")
+    btn.innerText="Add to Cart";
+
+    div.append(img,h3,p,btn)
+    document.querySelector("#container").append(div)
+  })
 
 </script>
