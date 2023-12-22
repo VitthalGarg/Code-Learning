@@ -33,6 +33,33 @@
     </main>
   </body>
   <script>
-    //you need to code here
+    let bookmarks=JSON.parse(localStorage.getItem("Bookmarked"))||[];
+    JSON.parse(localStorage.getItem("jobList")).forEach(function(elm){
+      let row=document.createElement("tr");
+
+      let d1=document.createElement("td");
+      d1.innerText=elm.name;
+
+      let d2=document.createElement("td");
+      d2.innerText=elm.email;
+
+      let d3=document.createElement("td");
+      d3.innerText=elm.role;
+
+      let d4=document.createElement("td");
+      d4.innerText=elm.salary;
+
+      let d5=document.createElement("td");
+      d5.innerText="Bookmark";
+      d5.addEventListener("click",function(){
+        bookmarks.push(elm)
+        console.log(bookmarks)
+        localStorage.setItem("Bookmarked",JSON.stringify(bookmarks));
+      })
+
+      row.append(d1,d2,d3,d4,d5)
+      document.querySelector("tbody").append(row)
+
+    })
   </script>
 </html>
