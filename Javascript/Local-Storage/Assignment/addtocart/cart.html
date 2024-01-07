@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Cart Page</title>
+    <style>
+        #container{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            /* height: 200px; */
+        }
+
+        img{
+            /* width: auto; */
+            height: 150px;
+        }
+        h3{
+            font-size: 15px;
+        }
+
+        #placeorder{
+            background-color: orange;
+            font-size: 20px;
+            margin-top: 20px;
+        }
+
+        .remove{
+            margin-top: 20px;
+        }
+
+        #totalamt{
+            font-size: 20px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>My Cart</h1>
+    <h2>Please checkout soon</h2>
+
+    <div id="container">
+    </div>
+
+</body>
+</html>
+
+
+<script>
+
+    let total=0;
+
+    addedcart=JSON.parse(localStorage.getItem("addedcart"))||[]
+
+    display(addedcart);
+
+    function display(addedcart){
+
+        addedcart.forEach(function(elm,index){
+
+        let div=document.createElement("div")
+
+        let img=document.createElement("img")
+        img.src=elm.image_url;
+
+        let h3=document.createElement("h3")
+        h3.innerText=elm.name;
+
+        let p=document.createElement("p")
+        p.innerText=elm.price*elm.quantity;
+
+        // quantity section start////////////////
+
+        let qua=document.createElement("div")
+        let pQ=document.createElement("p")
+        pQ.innerText="Quantity :"
+
+        let btn1Q=document.createElement("button")
+        btn1Q.innerText="-"
+        btn1Q.addEventListener("click",function(){
+            if(elm.quantity>1){elm.quantity--};
+            spanQ.innerText=" "+elm.quantity+" ";
+            p.innerText=elm.price*elm.quantity;
+            localStorage.setItem("addedcart",JSON.stringify(addedcart))
+            updatetotal()
+        })
+
+
+        let spanQ=document.createElement("span")
+        spanQ.innerText=" "+elm.quantity+" ";
+
+        let btn2Q=document.createElement("button")
+        btn2Q.innerText="+"
+        btn2Q.addEventListener("click",function(){
+            elm.quantity++
+            spanQ.innerText=" "+elm.quantity+" ";;
+            p.innerText=elm.price*elm.quantity;
+            localStorage.setItem("addedcart",JSON.stringify(addedcart))
+            updatetotal()
+        })
+
+        let btn=document.createElement("button")
+        btn.innerText="Remove";
+        btn.className="remove";
+
+        btn.addEventListener("click",function(event){
+            event.target.parentNode.remove()
+        })
+
+        btn.addEventListener("click",function(){
+            removeproduct(index)
+        })
+
+        div.append(img,h3,p,qua,btn)
+        document.querySelector("#container").append(div)
+
+        qua.append(pQ,btn1Q,spanQ,btn2Q);
+
+        function updatetotal(){
+            newtotal=total+elm.price*elm.quantity;
+            total=newtotal
+        }
+
+        updatetotal()
+
+        function removeproduct(index){
+        addedcart.splice(index,1);
+        localStorage.setItem("addedcart",JSON.stringify(addedcart))
+        // display(addedcart);
+        }
+
+        })
+
+
+    }
+
+//     addedcart.forEach(function(elm,index){
+
+//     let div=document.createElement("div")
+
+//     let img=document.createElement("img")
+//     img.src=elm.image_url;
+
+//     let h3=document.createElement("h3")
+//     h3.innerText=elm.name;
+
+//     let p=document.createElement("p")
+//     p.innerText=elm.price*elm.quantity;
+
+//     // quantity section start////////////////
+
+//     let qua=document.createElement("div")
+//     let pQ=document.createElement("p")
+//     pQ.innerText="Quantity :"
+
+//     let btn1Q=document.createElement("button")
+//     btn1Q.innerText="-"
+//     btn1Q.addEventListener("click",function(){
+//         if(elm.quantity>1){elm.quantity--};
+//         spanQ.innerText=" "+elm.quantity+" ";
+//         p.innerText=elm.price*elm.quantity;
+//         localStorage.setItem("addedcart",JSON.stringify(addedcart))
+//         updatetotal()
+//     })
+    
+
+//     let spanQ=document.createElement("span")
+//     spanQ.innerText=" "+elm.quantity+" ";
+
+//     let btn2Q=document.createElement("button")
+//     btn2Q.innerText="+"
+//     btn2Q.addEventListener("click",function(){
+//         elm.quantity++
+//         spanQ.innerText=" "+elm.quantity+" ";;
+//         p.innerText=elm.price*elm.quantity;
+//         localStorage.setItem("addedcart",JSON.stringify(addedcart))
+//         updatetotal()
+//     })
+
+//     let btn=document.createElement("button")
+//     btn.innerText="Remove";
+//     btn.className="remove";
+
+//     btn.addEventListener("click",function(event){
+//         event.target.parentNode.remove()
+//     })
+
+//     btn.addEventListener("click",function(){
+//         removeproduct(index)
+//     })
+
+//     div.append(img,h3,p,qua,btn)
+//     document.querySelector("#container").append(div)
+
+//     qua.append(pQ,btn1Q,spanQ,btn2Q);
+
+//     function updatetotal(){
+//         newtotal=total+elm.price*elm.quantity;
+//         total=newtotal
+//     }
+
+//     updatetotal()
+
+//     function removeproduct(index){
+//     addedcart.splice(index,1);
+//     localStorage.setItem("addedcart",JSON.stringify(addedcart))
+//   }
+
+//   })
+
+  let placeorderbtn=document.createElement("button")
+    placeorderbtn.innerText="Place Order";
+    placeorderbtn.id="placeorder"; 
+    
+    // newtotal=total+elm.price*elm.quantity;
+  // total=newtotal
+//   function updatetotal(){
+//     newtotal=total+elm.price*elm.quantity;
+//     total=10
+//   }
+    
+  let totalamt=document.createElement("p")
+  totalamt.id="totalamt";
+  totalamt.innerText="Total Amount : "+total+"/- Rs. only"
+//   functionsetInterval(updateValue, 5000);
+
+  document.querySelector("body").append(totalamt, placeorderbtn)
+
+//   function removeproduct(index){
+//     addedcart.splice(index,1);
+//     localStorage.setItem("addedcart",JSON.stringify(addedcart))
+//   }
+
+</script>

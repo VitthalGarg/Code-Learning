@@ -181,8 +181,10 @@
       strikedoffprice: 2099,
     },
   ];
+    
+    let cartarr=JSON.parse(localStorage.getItem("addedcart"))||[];
 
-  mensData.forEach(function(elm){
+    mensData.forEach(function(elm){
     let div=document.createElement("div")
 
     let img=document.createElement("img")
@@ -196,6 +198,13 @@
 
     let btn=document.createElement("button")
     btn.innerText="Add to Cart";
+
+    elm.quantity="1";
+
+    btn.addEventListener("click",function(){
+    cartarr.push(elm);
+    localStorage.setItem("addedcart",JSON.stringify(cartarr))
+    })
 
     div.append(img,h3,p,btn)
     document.querySelector("#container").append(div)
