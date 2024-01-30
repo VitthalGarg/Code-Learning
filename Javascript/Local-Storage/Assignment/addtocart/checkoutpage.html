@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Out Page</title>
+    <style>
+        /* #container{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            height: auto;
+        } */
+
+        img{
+            width: 30px;
+            height: 50px;
+        }
+        h3{
+            font-size: 15px;
+        }
+
+        #totalamt{
+            font-size: 20px;
+            margin-top: 30px;
+        }
+
+        #Nav{
+            font-size: 20px;
+            background-color: pink;
+            flex: grid;
+            grid-template-columns: 50%, 50%;
+            display: flex;
+            justify-content: space-around;
+            
+        }
+
+        
+        table,
+        td,
+        th {
+        border: 1px solid #ddd;
+        text-align: left;
+        }
+
+        table {
+        border-collapse: collapse;
+        width: 70%;
+        margin: auto;
+        margin-top: 50px;
+        }
+
+        th,
+        td {
+        padding: 15px;
+        }
+
+        tr > th {
+        background-color: teal;
+        color: white;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div id="Nav">
+        <a href="./men.html">Men</a>
+        <a href="./cart.html">My Cart</a>
+        <a href="./checkoutpage.html">CheckOut Here</a>
+        <!-- <a id="cartvalue"></a> -->
+    </div>
+    
+    
+    <!-- <h1>My Cart</h1> -->
+    <h2>Order Summary</h2>
+
+    <div id="container">
+    </div>
+
+    <main>
+        <table id="mytable">
+            <thead>
+                <tr>
+                    <td>Order</td>
+                    <td>Product Name</td>
+                    <td>Product</td>
+                    <td>Price</td>
+                    <td>Quantity</td>
+                    <td>Total Price</td>
+                </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+        </table>
+    </main>
+
+    <div id="totalamount">
+
+    </div>
+
+    <div id="promo">
+
+    </div>
+
+</body>
+</html>
+
+
+<script>
+        let addedcart=JSON.parse(localStorage.getItem("addedcart"))||[];
+
+        let total=0;
+
+        let totalamt=document.createElement("p")
+        totalamt.id="totalamt";
+        totalamt.innerText="Total Amount : "+total+"/- Rs. only"
+
+        // let input=document.createElement("input");
+        // input.type="text";
+        // input.placeholder="Enter Promo Code"
+
+        // let promobtn=document.createElement("button")
+        // promobtn.innerText="Apply Promo Code";
+        // promobtn.id="promocode";
+
+        // let finalamt=document.createElement("p")
+        // finalamt.id="totalamt";
+        // // finalamt.innerText="Final Amount : "+total+"/- Rs. only"
+        
+        let placeorderbtn=document.createElement("button")
+        placeorderbtn.innerText="Place Order";
+        placeorderbtn.id="placeorder";
+
+        document.querySelector("#totalamount").append(totalamt)
+        
+        document.querySelector("body").append(placeorderbtn)
+
+        addedcart.forEach(function(elm,index){
+        let row=document.createElement("tr");
+
+        let d1=document.createElement("td");
+        d1.innerText=index+1;
+
+        let d2=document.createElement("td");
+        d2.innerText=elm.name;
+
+        let d3=document.createElement("td");
+
+        let image=document.createElement("img");
+        image.src=elm.image_url;
+        d3.append(image);
+
+        let d4=document.createElement("td");
+        d4.innerText=elm.price;
+
+        let d5=document.createElement("td");
+        d5.innerText=elm.quantity;
+
+        let d6=document.createElement("td");
+        d6.innerText=elm.price*elm.quantity;
+
+        newtotal=total+elm.price*elm.quantity;
+        total=newtotal
+        totalamt.innerText="Total Amount : "+total+"/- Rs. only"
+
+        row.append(d1,d2,d3,d4,d5,d6)
+        document.querySelector("tbody").append(row)
+
+        })
+
+        let row=document.createElement("tr");
+
+        let t1=document.createElement("td");
+        t1.innerText="Grand Total";
+
+        let t2=document.createElement("td");
+        t2.innerText=total;
+
+        row.append(t1,t2);
+        document.querySelector("tbody").append(row)
+
+        let input=document.createElement("input");
+        input.type="text";
+        input.placeholder="Enter Promo Code"
+
+        let finalamt=document.createElement("p")
+        finalamt.id="totalamt";
+        // finalamt.innerText="Final Amount : "+total+"/- Rs. only"
+
+        let promobtn=document.createElement("button")
+        promobtn.innerText="Apply Promo Code";
+        promobtn.id="promocode";
+        promobtn.addEventListener("click",function(){
+            console.log("working1");
+            if(input.value=="masai30"){
+                discount=total*70/100;
+                total=discount;
+                finalamt.innerText="Final Amount : "+total+"/- Rs. only"
+                total=total*100/70           
+            }else{
+                alert("Invalid Promocode")
+            }
+        })
+
+        document.querySelector("#promo").append(input,promobtn,finalamt)
+
+
+        
+</script>

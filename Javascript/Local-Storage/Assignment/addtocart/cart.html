@@ -34,9 +34,28 @@
             font-size: 20px;
             margin-top: 30px;
         }
+
+        #Nav{
+            font-size: 20px;
+            background-color: pink;
+            flex: grid;
+            grid-template-columns: 50%, 50%;
+            display: flex;
+            justify-content: space-around;
+            
+        }
     </style>
 </head>
 <body>
+    <div id="Nav">
+        <a href="./men.html">Men</a>
+        <a href="./cart.html">My Cart</a>
+        <a href="./checkoutpage.html">CheckOut Here</a>
+
+        <a id="cartvalue"></a>
+    </div>
+    
+    
     <h1>My Cart</h1>
     <h2>Please checkout soon</h2>
 
@@ -50,6 +69,8 @@
 <script>
 
     let total=0;
+    let order=0;
+    document.querySelector("#cartvalue").innerText="Items: "+order+"  Cart Value: "+total+"/-"
 
     addedcart=JSON.parse(localStorage.getItem("addedcart"))||[]
 
@@ -57,7 +78,19 @@
 
     function display(addedcart){
 
+        let totalamt=document.createElement("p")
+        totalamt.id="totalamt";
+        totalamt.innerText="Total Amount : "+total+"/- Rs. only"
+
+        let placeorderbtn=document.createElement("button")
+        placeorderbtn.innerText="Place Order";
+        placeorderbtn.id="placeorder";
+
+        document.querySelector("body").append(totalamt, placeorderbtn)
+
         addedcart.forEach(function(elm,index){
+        order++;
+        console.log(order);
 
         let div=document.createElement("div")
 
@@ -65,7 +98,7 @@
         img.src=elm.image_url;
 
         let h3=document.createElement("h3")
-        h3.innerText=elm.name;
+        h3.innerText=elm.uniquecode+elm.name;
 
         let p=document.createElement("p")
         p.innerText=elm.price*elm.quantity;
@@ -73,46 +106,80 @@
 
         // quantity section starts////////////////
 
-        let spanQ=document.createElement("span")
-        spanQ.innerText=" "+elm.quantity+" ";
+        function updatetotal(){
+            newtotal=total+elm.price*elm.quantity;
+            total=newtotal
+            totalamt.innerText="Total Amount : "+total+"/- Rs. only"
+        }
 
         let qua=document.createElement("div")
+
         let pQ=document.createElement("p")
         pQ.innerText="Quantity :"
 
         let btn1Q=document.createElement("button")
         btn1Q.innerText="-"
         btn1Q.addEventListener("click",function(){
-            if(elm.quantity>1){elm.quantity--};
+            
+            if(elm.quantity>1){elm.quantity--
+            order--;
+            console.log(order);
+            lesstotal=total-elm.price;
+            total=lesstotal;
+            totalamt.innerText="Total Amount : "+total+"/- Rs. only"
+            document.querySelector("#cartvalue").innerText="Items: "+order+"  Cart Value: "+total+"/-"
+            };
             spanQ.innerText=" "+elm.quantity+" ";
             p.innerText=elm.price*elm.quantity;
             localStorage.setItem("addedcart",JSON.stringify(addedcart))
-            updatetotal()
         })
+
+        let spanQ=document.createElement("span")
+        spanQ.innerText=" "+elm.quantity+" ";
 
         let btn2Q=document.createElement("button")
         btn2Q.innerText="+"
         btn2Q.addEventListener("click",function(){
+            order++;
+            console.log(order);
+            newtotal=total-elm.quantity*elm.price;
+            total=newtotal;
             elm.quantity++
             spanQ.innerText=" "+elm.quantity+" ";;
             p.innerText=elm.price*elm.quantity;
             localStorage.setItem("addedcart",JSON.stringify(addedcart))
             updatetotal()
+            document.querySelector("#cartvalue").innerText="Items: "+order+"  Cart Value: "+total+"/-"
         })
 
-        // quantity section ends////////////////
+        updatetotal()
+        document.querySelector("#cartvalue").innerText="Items: "+order+"  Cart Value: "+total+"/-"
 
+        // quantity section ends////////////////
 
         let btn=document.createElement("button")
         btn.innerText="Remove";
         btn.className="remove";
+        
 
         btn.addEventListener("click",function(event){
             event.target.parentNode.remove()
         })
 
         btn.addEventListener("click",function(){
-            removeproduct(index)
+            removetotal=total-elm.price*elm.quantity;
+            order=order-elm.quantity;
+            console.log(order);
+            total=removetotal;
+            totalamt.innerText="Total Amount : "+total+"/- Rs. only"
+            document.querySelector("#cartvalue").innerText="Items: "+order+"  Cart Value: "+total+"/-"
+            localStorage.setItem("addedcart",JSON.stringify(addedcart))
+            
+        })
+
+        btn.addEventListener("click",function(elm){
+            addedcart.pop(elm);
+            localStorage.setItem("addedcart",JSON.stringify(addedcart))
         })
 
         div.append(img,h3,p,qua,btn)
@@ -120,32 +187,8 @@
 
         qua.append(pQ,btn1Q,spanQ,btn2Q);
 
-        function updatetotal(){
-            newtotal=total+elm.price*elm.quantity;
-            total=newtotal
-        }
-
-        updatetotal()
-
-        function removeproduct(index){
-        addedcart.splice(index,1);
-        localStorage.setItem("addedcart",JSON.stringify(addedcart))
-        }
-
         })
-
-
+        
     }
-
-  let placeorderbtn=document.createElement("button")
-    placeorderbtn.innerText="Place Order";
-    placeorderbtn.id="placeorder"; 
-    
-  let totalamt=document.createElement("p")
-  totalamt.id="totalamt";
-  totalamt.innerText="Total Amount : "+total+"/- Rs. only"
-
-  document.querySelector("body").append(totalamt, placeorderbtn)
-
 
 </script>

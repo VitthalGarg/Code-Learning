@@ -19,9 +19,26 @@
         h3{
             font-size: 15px;
         }
+
+        #Nav{
+            font-size: 20px;
+            background-color: pink;
+            flex: grid;
+            grid-template-columns: 50%, 50%;
+            display: flex;
+            justify-content: space-around;
+            
+        }
     </style>
 </head>
 <body>
+    <div id="Nav">
+      <a href="./men.html">Men</a>
+      <a href="./cart.html">My Cart</a>
+      <a href="./checkoutpage.html">CheckOut Here</a>
+
+    </div>
+
     <h1>Product page</h1>
 
     <div id="container">
@@ -182,16 +199,20 @@
     },
   ];
     
+    
+
     let cartarr=JSON.parse(localStorage.getItem("addedcart"))||[];
 
     mensData.forEach(function(elm){
     let div=document.createElement("div")
 
+    elm.uniquecode=mensData.indexOf(elm)+1;
+
     let img=document.createElement("img")
     img.src=elm.image_url;
 
     let h3=document.createElement("h3")
-    h3.innerText=elm.name;
+    h3.innerText=elm.uniquecode+elm.name;
 
     let p=document.createElement("p")
     p.innerText=elm.price;
@@ -203,7 +224,10 @@
 
     btn.addEventListener("click",function(){
     cartarr.push(elm);
+    // console.log(cartarr);
     localStorage.setItem("addedcart",JSON.stringify(cartarr))
+    cartarr=JSON.parse(localStorage.getItem("addedcart"))
+    console.log(cartarr);
     })
 
     div.append(img,h3,p,btn)
