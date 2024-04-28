@@ -4,8 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up page</title>
+
+    <style>
+        #signupherebutton{
+            margin-top: 30px;
+        }
+    </style>
 </head>
 <body>
+
+    <p>Kindly enter your creditionals here for login </p>
+    <div id="logincred"></div>
+
+    <div id="signupherebutton"></div>
         
 </body>
 </html>
+
+<script>
+
+    let loginid=document.createElement("input");
+    loginid.type="email";
+    loginid.placeholder="Enter Your Email";
+
+    let loginpass=document.createElement("input");
+    loginpass.type="text";
+    loginpass.placeholder="Enter Your Password";
+
+    let loginbutton=document.createElement("button");
+    loginbutton.innerText="Submit";
+
+
+    document.querySelector("#logincred").append(loginid,loginpass,loginbutton);
+
+
+    let signupherebutton=document.createElement("button");
+    signupherebutton.innerText="Signup Here";
+
+
+    document.querySelector("#signupherebutton").append(signupherebutton);    
+
+</script>

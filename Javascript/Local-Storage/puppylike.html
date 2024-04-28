@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>puppy like practice</title>
+    <style>
+
+        button{
+            background-color: teal;
+            padding: 10px;
+            margin: 20px 30px;
+        }
+
+        p{
+            font-weight: 800;
+        }
+
+    </style>
+</head>
+<body>
+    <img src="/Javascript/Local-Storage/sv.jpg" alt="">
+
+    <p>Like:- <span id="likespan"></span></p>
+    <p>Dislike:- <span id="dislikespan"></span></p>
+
+    <div> 
+        <button id="likebtn">Like</button>
+        <button id="dislikebtn">Disike</button>
+    </div>
+    <script>
+
+        let like=localStorage.getItem("likestored")||0;
+        let dislike=localStorage.getItem("dislikestored")||0;
+
+        document.querySelector("#likespan").innerText=like
+        document.querySelector("#dislikespan").innerText=dislike
+
+        document.querySelector("#likebtn").addEventListener("click",likefunc);
+
+        function likefunc(){
+            like++
+            document.querySelector("#likespan").innerText=like
+            localStorage.setItem("likestored",like)
+        }
+
+        document.querySelector("#dislikebtn").addEventListener("click",dislikefunc);
+
+        function dislikefunc(){
+            dislike++
+            document.querySelector("#dislikespan").innerText=dislike
+            localStorage.setItem("dislikestored",dislike)
+        }
+
+    </script>
+</body>
+</html>

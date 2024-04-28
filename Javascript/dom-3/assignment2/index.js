@@ -23,9 +23,14 @@ function doctor(event){
         mbl:mbl
     }
     objArr.push(obj)
+    displayTable(objArr);
+
+}
+
+
 
     // console.log(objArr);
-    displayTable(objArr);
+    // displayTable(objArr);
 
     function displayTable(objArr){
         document.querySelector("tbody").innerHTML="";
@@ -76,7 +81,7 @@ function doctor(event){
 
     }
 
-}
+
 
 
 

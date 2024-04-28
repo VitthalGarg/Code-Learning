@@ -52,6 +52,7 @@
     
 
     let box=document.querySelectorAll("#keys>div")
+    console.log(box)
     
     for(let i=0; i<box.length; i++){
         box[i].addEventListener("click",fun);
@@ -77,6 +78,10 @@
             bag="";
 
         }else if(x=="enter"){
+
+            if(bag==""){
+                alert("Kindly enter some value")
+            }else
 
             if(Number(bag)<Number(min.innerText)){
                 min.innerText=bag;

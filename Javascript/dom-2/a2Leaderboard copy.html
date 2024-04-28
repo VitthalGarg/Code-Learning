@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Leaderboard</title>
+    <style>
+        
+        
+        #min,#max{
+            display: inline-block;
+            height: 70px ;
+            width: 200px ;
+            background-color: teal;
+            font-size: 50px;
+        }
+        #display{
+            height: 80px ;
+            width: 300px ;
+            background-color: teal;
+            font-size: 50px;
+            font-size: 50px;
+            
+        }
+        #keys{
+            display: grid;
+            /* margin: auto; */
+            justify-content: center;
+            width: 40%;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(4, 50px);
+            font-size: 50px;
+            height: 60px;
+
+        }
+        #keys>div{
+            height: auto;
+            width: auto;
+            margin: 10px;
+            padding: 20px;
+            background-color: grey;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div id="min"></div>
+        <p>Min</p>
+        <div id="max"></div>
+        <p>Max</p>
+    </div>
+
+    <div id="display"></div>
+    <div id="keys">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>0</div>
+        <div>Enter</div>
+        <div>Clear</div>
+    </div>
+</body>
+</html>
+
+<script>
+
+    let box=document.querySelectorAll("#keys>div")
+    // console.log(box)
+    for(i=0;i<box.length;i++){
+        box[i].addEventListener("click",getdata)
+    }
+
+    let display=document.querySelector("#display");
+
+    let min= document.querySelector("#min")
+    let max= document.querySelector("#max")
+
+    min.innerText=Infinity;
+    max.innerText=0;
+
+    let bag="";
+
+
+    function getdata(){
+        let x=event.target.innerText;
+        // console.log(x);
+        
+
+        if(x=="Clear"){
+            display.innerText=""
+            bag="";
+        }
+
+        else if(x=="Enter"){
+
+            if(bag==""){
+                alert("Kindly enter some value")
+            } else if
+            
+            (Number(bag)<Number(min.innerText)){
+                min.innerText=bag;
+                display.innerText=""
+                bag=""
+            } else if 
+            
+            (Number(bag)>Number(max.innerText)){
+                max.innerText=bag;
+                display.innerText=""
+                bag=""
+            }
+
+            else if(Number(min.innerText)<Number(bag)<Number(max.innerText)){
+                bag=""
+                display.innerText=""
+            } 
+        }else{
+                bag=bag+x
+                display.innerText=bag
+            }
+
+    }
+
+
+</script>
