@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evolution 2</title>
+    <style>
+        #top>h1{
+            text-align: center;
+        }
+
+        #top>div{
+            width: 95%;
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            column-gap: 20px;
+            font-weight: 800;
+            margin: auto;
+        }
+
+        #top>div>div>img{
+            width: 100%;
+        }
+
+        #top>div>div>h3{
+            text-align: center;
+
+        }
+        
+        #mid>h1{
+            margin-left: 5%;
+        }
+
+        #mid>div{
+            width: 85%;
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            column-gap: 20px;
+            justify-content: center;
+            margin: auto;
+        }
+
+        #mid>div>img{
+            width: 100%;
+        }
+
+        #bottom>h1{
+            text-align: center;
+        }
+
+        #bottom>div{
+            width: 95%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            column-gap: 20px;
+            justify-content: center;
+            margin: auto;
+        }
+
+        #bottom>div>div>img{
+            width: 100%;
+        }
+
+        h2{
+            text-align: center;
+            background-color: #f9975e;
+            padding: 20px;
+            margin-top: -20px;
+        }
+        
+        /* Medium screens */
+      @media all and (min-width: 401px) and (max-width: 800px) {
+        #top>div{
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        #mid>div{
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        #bottom>div{
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+      }
+      /* Small screens */
+      @media all and (min-width: 100px) and (max-width: 400px) {
+        #top>div{
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        #mid>div{
+            grid-template-columns: repeat(2, 1fr);
+               }
+
+        #bottom>div{
+            grid-template-columns: repeat(1, 1fr);
+        }
+        
+      }
+    </style>
+</head>
+<body>
+    <div id="top">
+        <h1>Choose Your Store</h1>
+        <div>
+        </div>
+    </div>
+    <div id="mid">
+        <h1>Hard to Resist Deals</h1>
+        <div>
+            <!-- 8 cards will go inside here  -->
+        </div>
+    </div>
+    <div id="bottom">
+        <h1>Super Saving Products</h1>
+        <div>
+            <!-- 6 cards will go inside here  -->
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    let topdata=["Women","Men","Kids","Home","Tech","Luxe"]
+    topdata.forEach(function(elem){
+        let topdiv=document.createElement("div");
+
+        let img=document.createElement("img");
+        img.src="top.avif";
+
+        let h3=document.createElement("h3");
+        h3.innerText=elem;
+        
+        topdiv.append(img,h3)
+        document.querySelector("#top>div").append(topdiv);
+    })
+
+    for(i=0;i<8;i++){
+
+        let img=document.createElement("img");
+        img.src="mid.avif";
+
+        document.querySelector("#mid>div").append(img);
+    }
+
+    for(i=0;i<6;i++){
+        let bottomdiv=document.createElement("div");
+
+        let img=document.createElement("img");
+        img.src="bottom.avif";
+
+        let h2=document.createElement("h2");
+        h2.innerText="Min 40% off"
+        
+        bottomdiv.append(img,h2)
+        document.querySelector("#bottom>div").append(bottomdiv);
+    }
+</script>

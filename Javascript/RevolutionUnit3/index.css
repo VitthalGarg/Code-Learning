@@ -1,0 +1,42 @@
+
+
+#create{
+    text-align: center;
+    width: 25%;
+    margin: auto;    
+}
+
+form{
+    display: grid;
+    gap: 10px;
+    font-size: medium;
+    margin: 40px 0px;
+}
+
+input{
+    font-size: medium;
+}
+
+select{
+    font-size: medium;
+}
+
+form>input:nth-child(6){
+    background-color: grey;
+    color: whitesmoke;
+    padding: 5px 0px;
+}
+
+th{
+    background-color: teal;
+    padding: 10px 20px;
+}
+
+#total-price{
+    text-align: center;
+}
+
+table{
+    margin: auto;
+}
+
